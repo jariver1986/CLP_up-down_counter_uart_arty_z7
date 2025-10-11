@@ -10,7 +10,8 @@ Sistema en VHDL que integra `uart_rx`, `uart_tx` y un contador up/down de 4 bits
 ---
 
 ## 🧩 Arquitectura
-![Esquemático general](Figuras/esquematico_general.png)
+<img width="1885" height="891" alt="esquematico_general" src="https://github.com/user-attachments/assets/8b4e66ce-c6cc-4a13-98e0-a6a36a0be11a" />
+
 
 Módulos principales:
 - `uart_rx`: recepción 8N1 con sobremuestreo y `data_valid`.
@@ -52,7 +53,8 @@ Módulos principales:
    - `p` → pausa.
 
 Salida esperada en ondas:
-![Ondas](Figuras/wave1.png)
+<img width="1103" height="665" alt="wave1" src="https://github.com/user-attachments/assets/88f1734e-8b59-415d-8aa6-a27e47e16be4" />
+
 
 ---
 
@@ -62,24 +64,21 @@ Salida esperada en ondas:
 - Utilización baja de LUT/FF, sin BRAM/DSP.
 
 Reporte de implementación:
-![Implementación](Figuras/report_implementation.png)
-
-Utilización (referencia):
-![Utilización](Figuras/report_utilization.png)
+<img width="717" height="139" alt="report_implementation" src="https://github.com/user-attachments/assets/089476e6-5974-4037-a3a1-0773ef18bdb5" />
 
 ---
 
 ## ⚡ Potencia (estimación)
 Potencia total ~ **0.095 W**, dominada por componente estático.  
-![Power](Figuras/power_report.png)
+<img width="680" height="413" alt="power_report" src="https://github.com/user-attachments/assets/b6629263-4535-476a-9115-3f9e68745130" />
+
 
 ---
 
 ## ⏱️ Análisis temporal
 Resumen de slacks y checks de temporización post-implementación:  
-![Timing summary](Figuras/timing.png)  
-Detalle de setup/hold/pulse width:  
-![Timing detail](Figuras/TIMING_IMPLEMENTATION.png)
+<img width="881" height="176" alt="timing" src="https://github.com/user-attachments/assets/47f3fc9c-6c73-49a8-86ab-2ccddb0e4eac" />
+
 
 Criterios de validez:
 - **WNS/TNS ≥ 0 ns** (setup).
@@ -91,10 +90,12 @@ Criterios de validez:
 
 ## 🔌 Pruebas en hardware
 Conexión FTDI 3.3 V, GND común y cruces RX/TX.  
-![Hardware](Figuras/hardware.jpeg)
+![hardware](https://github.com/user-attachments/assets/b8ad566a-cbe3-45e8-b8a4-ec464bee8f08)
+
 
 Terminal serie (AccessPort) a **115200 8N1**:  
-![AccessPort](Figuras/accessport.png)
+<img width="564" height="395" alt="accessport" src="https://github.com/user-attachments/assets/4d3ab301-c4ed-43f2-8657-9c50ab97c0f0" />
+
 
 ---
 
@@ -110,22 +111,5 @@ Terminal serie (AccessPort) a **115200 8N1**:
 El valor del contador se **eco** en ASCII **hex** (`0..F`).
 
 ---
-
-## ✅ Buenas prácticas
-- Crear **tests** antes de implementar para evitar tiempo perdido en producción.
-- Revisar el **.xdc** para prevenir fallos de conexión o daño de pines.
-- Asegurar **3.3 V LVCMOS** en ambos extremos (FPGA y USB–UART).
-- Verificar **RX/TX cruzados** correctamente.
-- Probar **módulos por separado** (`uart_rx`, `uart_tx`, contador) antes de integrar.
-
----
-
-## 📜 Licencia
-Este proyecto se distribuye bajo la licencia **MIT**. Ver `LICENSE` para más detalles.
-
-## 🙌 Agradecimientos
-- Manual de referencia de Arty Z7 de Digilent.  
-- Guías UG901/UG903/UG904/UG949 de AMD Xilinx.  
-- Documentación general de UART.
 
 
