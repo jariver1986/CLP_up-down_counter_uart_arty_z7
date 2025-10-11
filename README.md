@@ -64,6 +64,7 @@ Salida esperada en ondas:
 - Utilización baja de LUT/FF, sin BRAM/DSP.
 
 Reporte de implementación:
+
 <img width="717" height="139" alt="report_implementation" src="https://github.com/user-attachments/assets/089476e6-5974-4037-a3a1-0773ef18bdb5" />
 
 ---
