@@ -1,0 +1,32 @@
+# Vivado / XSIM
+*.jou
+*.log
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.srcs/sources_1/bd/
+*.str
+*.xdc~*
+*.checkpoint
+*.dcp
+
+# Generados PDF/aux de LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+_build/
+*.pdf
+
+# VSCode
+.vscode/
+
+# SO
+.DS_Store
+Thumbs.db
